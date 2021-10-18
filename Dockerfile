@@ -1,5 +1,5 @@
 FROM mysql:5.7
 
-RUN
+ENV MYSQL_DATABASE=radius
 
 ENTRYPOINT
