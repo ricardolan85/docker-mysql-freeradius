@@ -2,4 +2,4 @@ FROM mysql:5.7
 
 ENV MYSQL_DATABASE=radius
 
-ENTRYPOINT
+COPY ./schema.sql /docker-entrypoint-initdb.d/
