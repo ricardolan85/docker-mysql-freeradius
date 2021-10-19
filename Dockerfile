@@ -4,6 +4,8 @@ RUN  apt-get update \
   && apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
 
+ENV MYSQL_USER=raduser
+ENV MYSQL_PASSWORD=radpass
 ENV MYSQL_DATABASE=radius
 
 WORKDIR /docker-entrypoint-initdb.d/
