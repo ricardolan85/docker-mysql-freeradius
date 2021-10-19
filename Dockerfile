@@ -1,5 +1,11 @@
 FROM mysql:5.7
 
+RUN  apt-get update \ 
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
 ENV MYSQL_DATABASE=radius
 
-COPY ./schema.sql /docker-entrypoint-initdb.d/
+WORKDIR /docker-entrypoint-initdb.d/
+
+RUN wget https://raw.githubusercontent.com/ricardolan85/vivavox-mysql-freeradius/main/schema.sql
